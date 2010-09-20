@@ -38,7 +38,9 @@ module Jqgrid
           :edit                => 'false',          
           :inline_edit         => 'false',
           :autowidth           => 'false',
-          :rownumbers          => 'false'                    
+          :rownumbers          => 'false',
+          :width               => '\'auto\'',
+          :shrinkToFit         => 'true'
         }.merge(options)
       
       # Stringify options values
@@ -264,6 +266,8 @@ module Jqgrid
               scrollrows: true,
               autowidth: #{options[:autowidth]},
               rownumbers: #{options[:rownumbers]},
+              width: #{options[:width]},
+              shrinkToFit: #{options[:shrinkToFit]},
               #{multiselect}
               #{masterdetails}
               #{grid_loaded}
