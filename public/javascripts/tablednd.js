@@ -8,9 +8,9 @@ jQuery("#listdnd").jqGrid({
    		{name:'invdate',index:'invdate', width:90},
    		{name:'name',index:'name', width:100},
    		{name:'amount',index:'amount', width:80, align:"right"},
-   		{name:'tax',index:'tax', width:80, align:"right"},		
-   		{name:'total',index:'total', width:80,align:"right"},		
-   		{name:'note',index:'note', width:150, sortable:false}		
+   		{name:'tax',index:'tax', width:80, align:"right"},
+   		{name:'total',index:'total', width:80,align:"right"},
+   		{name:'note',index:'note', width:150, sortable:false}
    	],
    	rowNum:10,
    	rowList:[10,20,30],
@@ -23,6 +23,6 @@ jQuery("#listdnd").jqGrid({
     gridComplete: function() {
     	$("#_empty","#listdnd").addClass("nodrag nodrop");
     	jQuery("#listdnd").tableDnDUpdate();
-    },    
+    },
     editurl:"someurl.php"
 }).navGrid('#pager1',{edit:false,add:false,del:false});

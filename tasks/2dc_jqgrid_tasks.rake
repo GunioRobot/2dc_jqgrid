@@ -17,5 +17,5 @@ namespace :jqgrid do
       FileUtils.rm_rf(target, :verbose => true)
     end
   end
-  
+
 end

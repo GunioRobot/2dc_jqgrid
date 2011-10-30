@@ -1,7 +1,7 @@
 class <%= model_name.pluralize.camelcase %>Controller < ApplicationController
-  
+
   protect_from_forgery :except => [:post_data]
-    
+
   def post_data
     if params[:oper] == "del"
       <%= camel %>.find(params[:id]).destroy
@@ -14,7 +14,7 @@ class <%= model_name.pluralize.camelcase %>Controller < ApplicationController
         <%= model_name %>.update_attributes(<%= model_name %>_params)
       end
     end
-    
+
     render :nothing => true
   end
 
@@ -25,7 +25,7 @@ class <%= model_name.pluralize.camelcase %>Controller < ApplicationController
         <%= col %> =~ "%#{params[:<%= col %>]}%" if params[:<%= col %>].present?
         <% end -%>
       end
-      paginate :page => params[:page], :per_page => params[:rows]      
+      paginate :page => params[:page], :per_page => params[:rows]
       order_by "#{params[:sidx]} #{params[:sord]}"
     end
     if request.xhr?
